@@ -98,7 +98,7 @@ func main() {
 			if err != nil {
 				errMsg := err.Error()
 				if strings.Contains(errMsg, "You exceeded your current quota") {
-					msg := tgbotapi.NewMessage(update.Message.Chat.ID, "KREDIT ANDA SUDAH HABIS, KREDITNYA DI TOP UP BEGOOOOOO")
+					msg := tgbotapi.NewMessage(update.Message.Chat.ID, "KREDIT ANDA SUDAH HABIS, KREDITNYA DI TOP UP BEGOOOOOOO")
 					bot.Send(msg)
 				} else {
 					msg := tgbotapi.NewMessage(update.Message.Chat.ID, errMsg)
