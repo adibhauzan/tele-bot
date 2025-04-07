@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = credentials('tele-bot-docker-image')
-        WEBHOOK_URL = credentials('tele-bot-webhook-url')
+        PORTAINER_WEBHOOK_URL = credentials('tele-bot-portainer-webhook-url')
     }
 
 
@@ -51,14 +51,14 @@ pipeline {
             }
         }
 
-        // stage('Deploy to Portainer') {
-        //     steps {
-        //         // echo "Deploying to stack: ${env.STACK_NAME}"
-        //         script {
-        //             sh """curl -X POST "${env.PORTAINER_WEBHOOK_URL}" """
-        //             echo "Deployed to Portainer"
-        //         }
-        //     }
-        // }
+        stage('Deploy to Portainer') {
+            steps {
+                // echo "Deploying to stack: ${env.STACK_NAME}"
+                script {
+                    sh """curl -X POST "${env.PORTAINER_WEBHOOK_URL}" """
+                    echo "Deployed to Portainer"
+                }
+            }
+        }
     }
 }
