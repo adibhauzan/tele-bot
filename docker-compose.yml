@@ -11,5 +11,3 @@ services:
       - BOT_TOKEN=${BOT_TOKEN}
       - GROUP_ID=${GROUP_ID}
       - OPENAI_KEY=${OPENAI_KEY}
-    env_file:
-      - .env
