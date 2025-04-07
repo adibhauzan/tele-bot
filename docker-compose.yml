@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: tele_bot
+    restart: always
+    image: ${DOCKER_IMAGE}
+    # ports:
+    #   - 3005:3005
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - GROUP_ID=${GROUP_ID}
+      - OPENAI_KEY=${OPENAI_KEY}
+    env_file:
+      - .env
